@@ -1,0 +1,86 @@
+# LogiScythe - Business Logic Testing Tool
+# Author: dangnosuy (Dang) & Gemini
+# Version: 0.1.0
+
+import argparse
+import sys
+from urllib.parse import urlparse
+
+import json
+from crawler import BrowserAgent
+from gemini_client import GeminiAnalyst
+from exploiter import Exploiter
+
+def main():
+    """
+    Main function to orchestrate the business logic testing process.
+    """
+    print("="*60)
+    print("          LogiScythe - Business Logic Testing Tool")
+    print("              by dangnosuy (Dang) & Gemini")
+    print("="*60)
+
+    parser = argparse.ArgumentParser(description="A semi-automated tool to find business logic vulnerabilities.")
+    
+    parser.add_argument("--url", "-u", required=True, type=str, help="The starting URL to crawl (e.g., https://example.com/login).")
+    parser.add_argument("--apikey", "-k", required=True, type=str, help="Your Google Gemini API Key.")
+    parser.add_argument("--model", "-m", type=str, default="gemini-2.0-flash-lite", help="The Gemini model to use (e.g., gemini-1.5-pro).")
+    parser.add_argument("--headless", action="store_true", help="Run the browser in headless mode (no GUI).")
+    
+    args = parser.parse_args()
+
+    # --- 1. Input Validation ---
+    print(f"[+] Validating target URL: {args.url}")
+    parsed_url = urlparse(args.url)
+    if not all([parsed_url.scheme, parsed_url.netloc]):
+        print(f"[!] Invalid URL: {args.url}. Please provide a full URL (e.g., https://example.com).")
+        sys.exit(1)
+    
+    target_domain = parsed_url.netloc
+    print(f"[+] Target domain identified: {target_domain}")
+    print(f"[+] Using model: {args.model}")
+    print(f"[+] Headless mode: {'Enabled' if args.headless else 'Disabled'}")
+    
+    try:
+        # --- 2. Crawling Phase ---
+        print("\n" + "-"*25 + " Phase 1: Crawling " + "-"*25)
+        browser_agent = BrowserAgent(headless=args.headless)
+        http_traffic_log, cookies = browser_agent.crawl(args.url, target_domain)
+        
+        if not http_traffic_log:
+            print("[!] Crawling did not capture any relevant HTTP traffic. Exiting.")
+            sys.exit(1)
+
+        print(f"[+] Crawling finished. Captured {len(http_traffic_log)} interactions.")
+        print(f"[+] Captured cookies: {[c['name'] for c in cookies]}")
+
+        # --- 3. Analysis Phase ---
+        print("\n" + "-"*25 + " Phase 2: Analysis " + "-"*25)
+        gemini_analyst = GeminiAnalyst(api_key=args.apikey, model=args.model)
+        analysis_result = gemini_analyst.analyze_flow(http_traffic_log)
+        
+        print("[+] Analysis complete. Gemini's findings:")
+        # A more elegant print will be added later with rich library
+        print(json.dumps(analysis_result, indent=2))
+
+        # --- 4. Exploitation Phase ---
+        print("\n" + "-"*24 + " Phase 3: Exploitation " + "-"*24)
+        exploiter = Exploiter(cookies=cookies, target_domain=target_domain)
+        vulnerabilities = analysis_result.get("vulnerabilities", [])
+        
+        if not vulnerabilities:
+            print("[+] No specific vulnerabilities with attack payloads were suggested by the AI.")
+        else:
+            for vulnerability in vulnerabilities:
+                print(f"\n[!] Testing for: {vulnerability.get('name', 'Unnamed Vulnerability')}")
+                exploiter.run_attacks(vulnerability.get('attack_payloads', []))
+
+        print("\n[+] LogiScythe run complete.")
+
+    except Exception as e:
+        print(f"[!!!] An unexpected error occurred: {e}", file=sys.stderr)
+        sys.exit(1)
+
+
+if __name__ == "__main__":
+    main()

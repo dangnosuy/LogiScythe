@@ -1,0 +1,6 @@
+# Core libraries for LogiScythe
+playwright
+requests
+google-generativeai
+rich
+beautifulsoup4
