@@ -515,7 +515,7 @@ def main():
         # A more elegant print will be added later with rich library
         print(json.dumps(analysis_result, indent=2))
 
-        # --- 4. Targeted Exploitation Phase ---
+        # --- 4. Targeted Exploitation Phase (with Iterative Testing) ---
         print("\n" + "-"*20 + " Phase 3: Targeted Exploitation " + "-"*20)
         exploiter = Exploiter(cookies=cookies, target_domain=target_domain)
         test_cases = analysis_result.get("recommended_test_cases", [])
@@ -537,19 +537,64 @@ def main():
                     print("    -> Skipping: No curl command supplied by Gemini.")
                     continue
 
-                results = exploiter.run_attacks([command])
-                if not results:
-                    print("    -> No execution results captured. Skipping to next test case.")
-                    continue
+                # Iterative Testing Loop
+                max_iterations = 3
+                test_history = []
+                final_status = "UNKNOWN"
+                
+                for iteration in range(1, max_iterations + 1):
+                    print(f"\n    [Iteration {iteration}/{max_iterations}]")
+                    
+                    # Execute current command
+                    result = exploiter.run_single_attack(command)
+                    
+                    # Log this attempt
+                    attempt_record = {
+                        "iteration": iteration,
+                        "command": result.get("command", ""),
+                        "stdout": result.get("stdout", ""),
+                        "stderr": result.get("stderr", "")
+                    }
+                    test_history.append(attempt_record)
+                    
+                    print(f"    -> Executed: {result.get('command', 'N/A')[:80]}...")
+                    
+                    # Ask AI to analyze result and suggest next step
+                    ai_decision = gemini_analyst.get_next_attack_step(
+                        test_case_description=description,
+                        test_history=test_history,
+                        last_result=result
+                    )
+                    
+                    assessment = ai_decision.get("assessment", "No assessment")
+                    next_payload = ai_decision.get("next_payload", "")
+                    final_status = ai_decision.get("status", "UNKNOWN")
+                    
+                    print(f"    -> AI Assessment: {assessment}")
+                    print(f"    -> Status: {final_status}")
+                    
+                    # Check if we should continue
+                    if final_status == "VULNERABILITY_CONFIRMED":
+                        print(f"    -> ✅ Vulnerability CONFIRMED after {iteration} iteration(s)!")
+                        break
+                    elif final_status == "TEST_CASE_FAILED":
+                        print(f"    -> ❌ Test case failed - moving to next test.")
+                        break
+                    elif final_status == "CONTINUE_TESTING" and next_payload:
+                        print(f"    -> 🔄 Continuing with refined payload...")
+                        command = next_payload
+                    else:
+                        print(f"    -> No next payload provided. Stopping.")
+                        break
 
-                result = results[0]
+                # Record final result
                 exploitation_results.append({
                     "test_case": name,
                     "category": category,
                     "description": description,
-                    "command": result.get("command", ""),
-                    "stdout": result.get("stdout", ""),
-                    "stderr": result.get("stderr", "")
+                    "status": final_status,
+                    "iterations": len(test_history),
+                    "test_history": test_history
                 })
 
         # --- 5. Final Report Phase ---

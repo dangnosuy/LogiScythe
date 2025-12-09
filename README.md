@@ -12,6 +12,18 @@ CrawLLMentor was a great proof-of-concept, but it focused more on academic visua
 
 Instead of generating complex graphs, LogiScythe captures a complete business flow (e.g., adding an item to a cart and checking out), sends the entire sequence of HTTP traffic to a powerful AI model (Google Gemini), and receives a direct analysis of potential business logic flaws, complete with ready-to-use `curl` commands for immediate testing.
 
+## 🚀 New in v2.0 - Top 5 Features
+
+LogiScythe v2.0 includes **5 major enhancements** for professional penetration testing:
+
+1. **✅ Iterative Testing Loop**: AI performs multiple testing attempts, learning from failures and refining payloads automatically
+2. **✅ Multi-User Role Crawling**: Test with multiple roles simultaneously to detect IDOR and privilege escalation
+3. **✅ Automated Exploit Chains**: Create complex multi-step attack sequences with variable extraction
+4. **✅ Response Validator**: Intelligent validation system to reduce false positives and increase confidence
+5. **✅ Interactive Web Dashboard**: Real-time monitoring with live progress, vulnerabilities, and logs
+
+See [FEATURES.md](FEATURES.md) for detailed documentation.
+
 ## How It Works
 
 LogiScythe operates in three distinct phases:
@@ -71,6 +83,29 @@ LogiScythe operates in three distinct phases:
 4.  **Get an API Key:**
     -   Obtain a Google Gemini API key from [Google AI Studio](https://aistudio.google.com/).
 
+## Quick Start
+
+### Basic Scan
+```bash
+python main.py --url "https://example.com/shop" --apikey "YOUR_API_KEY"
+```
+
+### With Interactive Dashboard
+```bash
+# Terminal 1: Start dashboard
+python dashboard.py
+
+# Terminal 2: Run scan (dashboard will update in real-time)
+python main.py --url "https://example.com" --apikey "YOUR_API_KEY"
+
+# Open browser: http://127.0.0.1:5000
+```
+
+### Complete Example (All Features)
+```bash
+python examples/complete_example.py
+```
+
 ## Usage
 
 Run the tool from your terminal, providing a starting URL and your API key.
@@ -83,11 +118,84 @@ python main.py --url "https://example.com/shop" --apikey "YOUR_GEMINI_API_KEY"
 
 -   `--url`, `-u`: **(Required)** The starting URL to crawl.
 -   `--apikey`, `-k`: **(Required)** Your Google Gemini API Key.
--   `--model`, `-m`: (Optional) The Gemini model to use. Defaults to `gemini-1.5-flash`.
+-   `--model`, `-m`: (Optional) The Gemini model to use. Defaults to `gemini-2.5-pro`.
 -   `--headless`: (Optional) Run the browser in headless mode (no GUI). Recommended for servers.
 -   `--cache-file`: (Optional) Custom path for the conversation cache JSON file. Defaults to `crawl-cache-<domain>.json`.
 -   `--use-cache`: (Optional) Skip crawling/replay and load the cached request/response dataset + cookies.
 -   `--skip-cache-save`: (Optional) Prevent overwriting the cache after capturing new conversations.
+
+## 🎯 Advanced Usage
+
+### Multi-Role Testing
+```python
+from multi_role import MultiRoleCrawler
+
+crawler = MultiRoleCrawler()
+crawler.load_roles_from_file("examples/roles.json")
+findings = crawler.compare_access()
+```
+
+### Exploit Chains
+```python
+from exploit_chain import CommonChains
+
+chain = CommonChains.price_manipulation_chain()
+chain.set_global_variable("target_domain", "shop.example.com")
+result = chain.execute_chain(exploiter)
+```
+
+### Response Validation
+```python
+from response_validator import ResponseValidator
+
+validator = ResponseValidator()
+result = validator.validate_response(response, "price_manipulation")
+if result["is_vulnerability_confirmed"]:
+    print(f"Confirmed with {result['confidence_score']:.1%} confidence")
+```
+
+## 📊 Project Structure
+
+```
+LogiScythe/
+├── main.py                 # Main entry point
+├── crawler.py              # Playwright-based crawler
+├── exploiter.py            # Exploit execution engine
+├── gemini_client.py        # AI analysis with Gemini
+├── dashboard.py            # 🆕 Web dashboard server
+├── multi_role.py           # 🆕 Multi-user role testing
+├── exploit_chain.py        # 🆕 Automated exploit chains
+├── response_validator.py   # 🆕 Response validation
+├── requirements.txt
+├── README.md
+├── FEATURES.md             # 🆕 Detailed feature docs
+├── templates/
+│   └── dashboard.html      # 🆕 Dashboard UI
+└── examples/
+    ├── roles.json          # 🆕 Role configuration
+    └── complete_example.py # 🆕 Full demo
+```
+
+## 🎓 Documentation
+
+- **[FEATURES.md](FEATURES.md)**: Complete guide to all Top 5 features
+- **[examples/](examples/)**: Example configurations and scripts
+
+## 🐛 Troubleshooting
+
+See [FEATURES.md](FEATURES.md) for detailed troubleshooting guide.
+
+## 📝 Changelog
+
+### v2.0.0 (2025-12-09)
+- ✅ Iterative Testing Loop with AI learning
+- ✅ Multi-User Role Crawling for IDOR detection
+- ✅ Automated Exploit Chains with variable extraction
+- ✅ Response Validator for false positive reduction
+- ✅ Interactive Web Dashboard with real-time updates
+
+### v1.0.0
+- Initial release with basic crawling, analysis, and exploitation
 
 ---
 *This tool is for educational and authorized security testing purposes only.*

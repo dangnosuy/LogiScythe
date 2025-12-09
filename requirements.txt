@@ -4,3 +4,8 @@ requests
 google-generativeai
 rich
 beautifulsoup4
+
+# New features - Top 5 enhancements
+flask
+flask-socketio
+flask-cors
