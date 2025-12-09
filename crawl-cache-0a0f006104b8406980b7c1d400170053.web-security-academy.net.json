@@ -1,0 +1,355 @@
+{
+  "metadata": {
+    "source_url": "https://0a0f006104b8406980b7c1d400170053.web-security-academy.net/",
+    "target_domain": "0a0f006104b8406980b7c1d400170053.web-security-academy.net",
+    "saved_at": "2025-12-09T04:22:08.777618Z",
+    "entry_count": 11
+  },
+  "conversations": [
+    {
+      "request": {
+        "method": "GET",
+        "url": "https://0a0f006104b8406980b7c1d400170053.web-security-academy.net/",
+        "headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "priority": "u=0, i",
+          "sec-ch-ua": "\"HeadlessChrome\";v=\"141\", \"Not?A_Brand\";v=\"8\", \"Chromium\";v=\"141\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"Linux\"",
+          "sec-fetch-dest": "document",
+          "sec-fetch-mode": "navigate",
+          "sec-fetch-site": "none",
+          "sec-fetch-user": "?1",
+          "upgrade-insecure-requests": "1",
+          "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/141.0.7390.37 Safari/537.36"
+        },
+        "body": null,
+        "resource_type": "document"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "text/html; charset=utf-8",
+          "X-Frame-Options": "SAMEORIGIN",
+          "Content-Encoding": "gzip",
+          "Connection": "close",
+          "Content-Length": "1628"
+        },
+        "body": "<!DOCTYPE html>\n<html>\n    <head>\n        <link href=/resources/labheader/css/academyLabHeader.css rel=stylesheet>\n        <link href=/resources/css/labsEcommerce.css rel=stylesheet>\n        <title>Excessive trust in client-side controls</title>\n    </head>\n    <body>\n        <script src=\"/resources/labheader/js/labHeader.js\"></script>\n        <div id=\"academyLabHeader\">\n            <section class='academyLabBanner'>\n                <div class=container>\n                    <div class=logo></div>\n                        <div class=title-container>\n                            <h2>Excessive trust in client-side controls</h2>\n                            <a class=link-back href='https://portswigger.net/web-security/logic-flaws/examples/lab-logic-flaws-excessive-trust-in-client-side-controls'>\n                                Back&nbsp;to&nbsp;lab&nbsp;description&nbsp;\n                                <svg version=1.1 id=Layer_1 xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x=0px y=0px viewBox='0 0 28 30' enable-background='new 0 0 28 30' xml:space=preserve title=back-arrow>\n                                    <g>\n                                        <polygon points='1.4,0 0,1.2 12.6,15 0,28.8 1.4,30 15.1,15'></polygon>\n                                        <polygon points='14.3,0 12.9,1.2 25.6,15 12.9,28.8 14.3,30 28,15'></polygon>\n                                    </g>\n                                </svg>\n                            </a>\n                        </div>\n                        <div class='widgetcontainer-lab-status is-notsolved'>\n                            <span>LAB</span>\n                            <p>Not solved</p>\n                            <span class=lab-status-icon></span>\n                        </div>\n                    </div>\n                </div>\n            </section>\n        </div>\n        <div theme=\"ecommerce\">\n            <section class=\"maincontainer\">\n                <div class=\"container\">\n                    <header class=\"navigation-header\">\n                        <section class=\"top-links\">\n                            <a href=/>Home</a><p>|</p>\n                            <a href=\"/my-account\">My account</a><p>|</p>\n                            <a href=/cart>\n                                <img src=/resources/images/cart_blue.svg />\n                            </a>\n                            <p>0</p>\n                            <p>|</p>\n                        </section>\n                    </header>\n                    <header class=\"notification-header\">\n                    </header>\n                    <section class=\"ecoms-pageheader\">\n                        <img src=\"/resources/images/shop.svg\">\n                    </section>\n                    <section class=\"container-list-tiles\">\n                        <div>\n                            <img src=\"/image/productcatalog/specialproducts/LeetLeatherJacket.jpg\">\n                            <h3>Lightweight &quot;l33t&quot; Leather Jacket</h3>\n                            <img src=\"/resources/images/rating5.png\">\n                            $1337.00\n                            <a class=\"button\" href=\"/product?productId=1\">View details</a>\n                        </div>\n                        <div>\n                            <img src=\"/image/productcatalog/products/54.jpg\">\n                            <h3>Robot Home Security Buddy</h3>\n                            <img src=\"/resources/images/rating1.png\">\n                            $64.24\n                            <a class=\"button\" href=\"/product?productId=2\">View details</a>\n                        </div>\n                        <div>\n                            <img src=\"/image/productcatalog/products/5.jpg\">\n                            <h3>Cheshire Cat Grin</h3>\n                            <img src=\"/resources/images/rating5.png\">\n                            $30.55\n                            <a class=\"button\" href=\"/product?productId=3\">View details</a>\n                        </div>\n                        <div>\n                            <img src=\"/image/productcatalog/products/74.jpg\">\n                            <h3>Packaway Carport</h3>\n                            <img src=\"/resources/images/rating3.png\">\n                            $74.91\n                            <a class=\"button\" href=\"/product?productId=4\">View details</a>\n                        </div>\n                        <div>\n                            <img src=\"/image/productcatalog/products/42.jpg\">\n                            <h3>Pest Control Umbrella</h3>\n                            <img src=\"/resources/images/rating5.png\">\n                            $68.78\n                            <a class=\"button\" href=\"/product?productId=5\">View details</a>\n                        </div>\n                        <div>\n                            <img src=\"/image/productcatalog/products/53.jpg\">\n                            <h3>High-End Gift Wrapping</h3>\n                            <img src=\"/resources/images/rating1.png\">\n                            $16.74\n                            <a class=\"button\" href=\"/product?productId=6\">View details</a>\n                        </div>\n                        <div>\n                            <img src=\"/image/productcatalog/products/17.jpg\">\n                            <h3>Picture Box</h3>\n                            <img src=\"/resources/images/rating4.png\">\n                            $96.25\n                            <a class=\"button\" href=\"/product?productId=7\">View details</a>\n                        </div>\n                        <div>\n                            <img src=\"/image/productcatalog/products/45.jpg\">\n                            <h3>ZZZZZZ Bed - Your New Home Office</h3>\n                            <img src=\"/resources/images/rating5.png\">\n                            $46.08\n                            <a class=\"button\" href=\"/product?productId=8\">View details</a>\n                        </div>\n                        <div>\n                            <img src=\"/image/productcatalog/products/44.jpg\">\n                            <h3>Paint a rainbow</h3>\n                            <img src=\"/resources/images/rating2.png\">\n                            $1.72\n                            <a class=\"button\" href=\"/product?productId=9\">View details</a>\n                        </div>\n                        <div>\n                            <img src=\"/image/productcatalog/products/56.jpg\">\n                            <h3>More Than Just Birdsong</h3>\n                            <img src=\"/resources/images/rating4.png\">\n                            $60.32\n                            <a class=\"button\" href=\"/product?productId=10\">View details</a>\n                        </div>\n                        <div>\n                            <img src=\"/image/productcatalog/products/31.jpg\">\n                            <h3>Couple&apos;s Umbrella</h3>\n                            <img src=\"/resources/images/rating5.png\">\n                            $29.62\n                            <a class=\"button\" href=\"/product?productId=11\">View details</a>\n                        </div>\n                        <div>\n                            <img src=\"/image/productcatalog/products/73.jpg\">\n                            <h3>Beat the Vacation Traffic</h3>\n                            <img src=\"/resources/images/rating4.png\">\n                            $80.57\n                            <a class=\"button\" href=\"/product?productId=12\">View details</a>\n                        </div>\n                        <div>\n                            <img src=\"/image/productcatalog/products/30.jpg\">\n                            <h3>Giant Pillow Thing</h3>\n                            <img src=\"/resources/images/rating4.png\">\n                            $25.10\n                            <a class=\"button\" href=\"/product?productId=13\">View details</a>\n                        </div>\n                        <div>\n                            <img src=\"/image/productcatalog/products/59.jpg\">\n                            <h3>Inflatable Holiday Home</h3>\n                            <img src=\"/resources/images/rating5.png\">\n                            $45.33\n                            <a class=\"button\" href=\"/product?productId=14\">View details</a>\n                        </div>\n                        <div>\n                            <img src=\"/image/productcatalog/products/15.jpg\">\n                            <h3>Pet Experience Days</h3>\n                            <img src=\"/resources/images/rating3.png\">\n                            $64.01\n                            <a class=\"button\" href=\"/product?productId=15\">View details</a>\n                        </div>\n                        <div>\n                            <img src=\"/image/productcatalog/products/21.jpg\">\n                            <h3>Snow Delivered To Your Door</h3>\n                            <img src=\"/resources/images/rating5.png\">\n                            $65.34\n                            <a class=\"button\" href=\"/product?productId=16\">View details</a>\n                        </div>\n                        <div>\n                            <img src=\"/image/productcatalog/products/2.jpg\">\n                            <h3>All-in-One Typewriter</h3>\n                            <img src=\"/resources/images/rating4.png\">\n                            $32.56\n                            <a class=\"button\" href=\"/product?productId=17\">View details</a>\n                        </div>\n                        <div>\n                            <img src=\"/image/productcatalog/products/38.jpg\">\n                            <h3>Six Pack Beer Belt</h3>\n                            <img src=\"/resources/images/rating3.png\">\n                            $49.86\n                            <a class=\"button\" href=\"/product?productId=18\">View details</a>\n                        </div>\n                        <div>\n                            <img src=\"/image/productcatalog/products/14.jpg\">\n                            <h3>Mood Enhancer</h3>\n                            <img src=\"/resources/images/rating4.png\">\n                            $40.50\n                            <a class=\"button\" href=\"/product?productId=19\">View details</a>\n                        </div>\n                        <div>\n                            <img src=\"/image/productcatalog/products/9.jpg\">\n                            <h3>Fur Babies</h3>\n                            <img src=\"/resources/images/rating1.png\">\n                            $12.53\n                            <a class=\"button\" href=\"/product?productId=20\">View details</a>\n                        </div>\n                    </section>\n                </div>\n            </section>\n            <div class=\"footer-wrapper\">\n            </div>\n        </div>\n    </body>\n</html>\n",
+        "body_encoding": "text",
+        "error": null,
+        "final_url": "https://0a0f006104b8406980b7c1d400170053.web-security-academy.net/"
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "url": "https://0a0f006104b8406980b7c1d400170053.web-security-academy.net/resources/labheader/js/labHeader.js",
+        "headers": {
+          "accept": "*/*",
+          "priority": "u=1",
+          "referer": "https://0a0f006104b8406980b7c1d400170053.web-security-academy.net/",
+          "sec-ch-ua": "\"HeadlessChrome\";v=\"141\", \"Not?A_Brand\";v=\"8\", \"Chromium\";v=\"141\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"Linux\"",
+          "sec-fetch-dest": "script",
+          "sec-fetch-mode": "no-cors",
+          "sec-fetch-site": "same-origin",
+          "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/141.0.7390.37 Safari/537.36"
+        },
+        "body": null,
+        "resource_type": "script"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "application/javascript; charset=utf-8",
+          "Cache-Control": "public, max-age=3600",
+          "X-Frame-Options": "SAMEORIGIN",
+          "Content-Encoding": "gzip",
+          "Connection": "close",
+          "Content-Length": "515"
+        },
+        "body": "completedListeners = [];\n\n(function () {\n    let labHeaderWebSocket = undefined;\n    function openWebSocket() {\n        return new Promise(res => {\n            if (labHeaderWebSocket) {\n                res(labHeaderWebSocket);\n                return;\n            }\n\n            let newWebSocket = new WebSocket(location.origin.replace(\"http\", \"ws\") + \"/academyLabHeader\");\n\n            newWebSocket.onopen = function (evt) {\n                res(newWebSocket);\n            };\n\n            newWebSocket.onmessage = function (evt) {\n                const labSolved = document.getElementById('notification-labsolved');\n                const keepAliveMsg = evt.data === 'PONG';\n                if (labSolved || keepAliveMsg) {\n                    return;\n                }\n                document.getElementById(\"academyLabHeader\").innerHTML = evt.data;\n                animateLabHeader();\n\n                for (const listener of completedListeners) {\n                    listener();\n                }\n            };\n\n            setInterval(() => {\n                newWebSocket.send(\"PING\");\n            }, 5000)\n        });\n    }\n\n    labHeaderWebSocket = openWebSocket();\n})();\n\nfunction animateLabHeader() {\n    setTimeout(function() {\n        const labSolved = document.getElementById('notification-labsolved');\n        if (labSolved)\n        {\n            let cl = labSolved.classList;\n            cl.remove('notification-labsolved-hidden');\n            cl.add('notification-labsolved');\n        }\n\n    }, 500);\n}",
+        "body_encoding": "text",
+        "error": null,
+        "final_url": "https://0a0f006104b8406980b7c1d400170053.web-security-academy.net/resources/labheader/js/labHeader.js"
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "url": "https://0a0f006104b8406980b7c1d400170053.web-security-academy.net/product?productId=9",
+        "headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "priority": "u=0, i",
+          "sec-ch-ua": "\"HeadlessChrome\";v=\"141\", \"Not?A_Brand\";v=\"8\", \"Chromium\";v=\"141\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"Linux\"",
+          "sec-fetch-dest": "document",
+          "sec-fetch-mode": "navigate",
+          "sec-fetch-site": "none",
+          "sec-fetch-user": "?1",
+          "upgrade-insecure-requests": "1",
+          "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/141.0.7390.37 Safari/537.36"
+        },
+        "body": null,
+        "resource_type": "document"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "text/html; charset=utf-8",
+          "X-Frame-Options": "SAMEORIGIN",
+          "Content-Encoding": "gzip",
+          "Connection": "close",
+          "Content-Length": "1519"
+        },
+        "body": "<!DOCTYPE html>\n<html>\n    <head>\n        <link href=/resources/labheader/css/academyLabHeader.css rel=stylesheet>\n        <link href=/resources/css/labsEcommerce.css rel=stylesheet>\n        <title>Excessive trust in client-side controls</title>\n    </head>\n    <body>\n        <script src=\"/resources/labheader/js/labHeader.js\"></script>\n        <div id=\"academyLabHeader\">\n            <section class='academyLabBanner'>\n                <div class=container>\n                    <div class=logo></div>\n                        <div class=title-container>\n                            <h2>Excessive trust in client-side controls</h2>\n                            <a class=link-back href='https://portswigger.net/web-security/logic-flaws/examples/lab-logic-flaws-excessive-trust-in-client-side-controls'>\n                                Back&nbsp;to&nbsp;lab&nbsp;description&nbsp;\n                                <svg version=1.1 id=Layer_1 xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x=0px y=0px viewBox='0 0 28 30' enable-background='new 0 0 28 30' xml:space=preserve title=back-arrow>\n                                    <g>\n                                        <polygon points='1.4,0 0,1.2 12.6,15 0,28.8 1.4,30 15.1,15'></polygon>\n                                        <polygon points='14.3,0 12.9,1.2 25.6,15 12.9,28.8 14.3,30 28,15'></polygon>\n                                    </g>\n                                </svg>\n                            </a>\n                        </div>\n                        <div class='widgetcontainer-lab-status is-notsolved'>\n                            <span>LAB</span>\n                            <p>Not solved</p>\n                            <span class=lab-status-icon></span>\n                        </div>\n                    </div>\n                </div>\n            </section>\n        </div>\n        <div theme=\"ecommerce\">\n            <section class=\"maincontainer\">\n                <div class=\"container is-page\">\n                    <header class=\"navigation-header\">\n                        <section class=\"top-links\">\n                            <a href=/>Home</a><p>|</p>\n                            <a href=\"/my-account\">My account</a><p>|</p>\n                            <a href=/cart>\n                                <img src=/resources/images/cart_blue.svg />\n                            </a>\n                            <p>0</p>\n                            <p>|</p>\n                        </section>\n                    </header>\n                    <header class=\"notification-header\">\n                    </header>\n                    <section class=\"product\">\n                        <h3>Paint a rainbow</h3>\n                        <img src=\"/resources/images/rating2.png\">\n                        <div id=\"price\">$1.72</div>\n                        <img src=\"/image/productcatalog/products/44.jpg\">\n                        <label>Description:</label>\n                        <p>On a dull grey day, when everyone needs a little color or sunshine in their lives, you can be the hero of the hour. Our new 'Paint A Rainbow' running suit will not only enhance your performance but will improve the lives of everyone around you.</p>\n<p>Super lightweight material gives you the cutting edge when it comes to speed, but not only that; a million embedded nano super lights will give you a rainbow streak lighting up the sky as you run. They say not every superhero wears a suit, but you CAN. Bring some color and light into the lives of others by doing what you already do every day.</p>\n<p>These are limited edition running suits, be one of only 100 people who have access to our brand new range. So, don't delay Paint A Rainbow today.</p>\n                        <form id=addToCartForm action=/cart method=POST>\n                            <input required type=hidden name=productId value=9>\n                            <input required type=hidden name=redir value=PRODUCT>\n                            <input required type=number min=0 max=99 name=quantity value=1>\n                            <input required type=hidden name=price value=172>\n                            <button type=submit class=button>Add to cart</button>\n                        </form>\n                        <div class=\"is-linkback\">\n                            <a href=\"/\">Return to list</a>\n                        </div>\n                    </section>\n                </div>\n            </section>\n            <div class=\"footer-wrapper\">\n            </div>\n        </div>\n    </body>\n</html>\n",
+        "body_encoding": "text",
+        "error": null,
+        "final_url": "https://0a0f006104b8406980b7c1d400170053.web-security-academy.net/product?productId=9"
+      }
+    },
+    {
+      "request": {
+        "method": "POST",
+        "url": "https://0a0f006104b8406980b7c1d400170053.web-security-academy.net/cart",
+        "headers": {
+          "Content-Type": "application/x-www-form-urlencoded"
+        },
+        "body": "productId=9&redir=PRODUCT&quantity=1&price=172",
+        "resource_type": "form"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "text/html; charset=utf-8",
+          "X-Frame-Options": "SAMEORIGIN",
+          "Content-Encoding": "gzip",
+          "Connection": "close",
+          "Content-Length": "1519"
+        },
+        "body": "<!DOCTYPE html>\n<html>\n    <head>\n        <link href=/resources/labheader/css/academyLabHeader.css rel=stylesheet>\n        <link href=/resources/css/labsEcommerce.css rel=stylesheet>\n        <title>Excessive trust in client-side controls</title>\n    </head>\n    <body>\n        <script src=\"/resources/labheader/js/labHeader.js\"></script>\n        <div id=\"academyLabHeader\">\n            <section class='academyLabBanner'>\n                <div class=container>\n                    <div class=logo></div>\n                        <div class=title-container>\n                            <h2>Excessive trust in client-side controls</h2>\n                            <a class=link-back href='https://portswigger.net/web-security/logic-flaws/examples/lab-logic-flaws-excessive-trust-in-client-side-controls'>\n                                Back&nbsp;to&nbsp;lab&nbsp;description&nbsp;\n                                <svg version=1.1 id=Layer_1 xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x=0px y=0px viewBox='0 0 28 30' enable-background='new 0 0 28 30' xml:space=preserve title=back-arrow>\n                                    <g>\n                                        <polygon points='1.4,0 0,1.2 12.6,15 0,28.8 1.4,30 15.1,15'></polygon>\n                                        <polygon points='14.3,0 12.9,1.2 25.6,15 12.9,28.8 14.3,30 28,15'></polygon>\n                                    </g>\n                                </svg>\n                            </a>\n                        </div>\n                        <div class='widgetcontainer-lab-status is-notsolved'>\n                            <span>LAB</span>\n                            <p>Not solved</p>\n                            <span class=lab-status-icon></span>\n                        </div>\n                    </div>\n                </div>\n            </section>\n        </div>\n        <div theme=\"ecommerce\">\n            <section class=\"maincontainer\">\n                <div class=\"container is-page\">\n                    <header class=\"navigation-header\">\n                        <section class=\"top-links\">\n                            <a href=/>Home</a><p>|</p>\n                            <a href=\"/my-account\">My account</a><p>|</p>\n                            <a href=/cart>\n                                <img src=/resources/images/cart_blue.svg />\n                            </a>\n                            <p>1</p>\n                            <p>|</p>\n                        </section>\n                    </header>\n                    <header class=\"notification-header\">\n                    </header>\n                    <section class=\"product\">\n                        <h3>Paint a rainbow</h3>\n                        <img src=\"/resources/images/rating2.png\">\n                        <div id=\"price\">$1.72</div>\n                        <img src=\"/image/productcatalog/products/44.jpg\">\n                        <label>Description:</label>\n                        <p>On a dull grey day, when everyone needs a little color or sunshine in their lives, you can be the hero of the hour. Our new 'Paint A Rainbow' running suit will not only enhance your performance but will improve the lives of everyone around you.</p>\n<p>Super lightweight material gives you the cutting edge when it comes to speed, but not only that; a million embedded nano super lights will give you a rainbow streak lighting up the sky as you run. They say not every superhero wears a suit, but you CAN. Bring some color and light into the lives of others by doing what you already do every day.</p>\n<p>These are limited edition running suits, be one of only 100 people who have access to our brand new range. So, don't delay Paint A Rainbow today.</p>\n                        <form id=addToCartForm action=/cart method=POST>\n                            <input required type=hidden name=productId value=9>\n                            <input required type=hidden name=redir value=PRODUCT>\n                            <input required type=number min=0 max=99 name=quantity value=1>\n                            <input required type=hidden name=price value=172>\n                            <button type=submit class=button>Add to cart</button>\n                        </form>\n                        <div class=\"is-linkback\">\n                            <a href=\"/\">Return to list</a>\n                        </div>\n                    </section>\n                </div>\n            </section>\n            <div class=\"footer-wrapper\">\n            </div>\n        </div>\n    </body>\n</html>\n",
+        "body_encoding": "text",
+        "error": null,
+        "final_url": "https://0a0f006104b8406980b7c1d400170053.web-security-academy.net/product?productId=9"
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "url": "https://0a0f006104b8406980b7c1d400170053.web-security-academy.net/my-account",
+        "headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "priority": "u=0, i",
+          "sec-ch-ua": "\"HeadlessChrome\";v=\"141\", \"Not?A_Brand\";v=\"8\", \"Chromium\";v=\"141\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"Linux\"",
+          "sec-fetch-dest": "document",
+          "sec-fetch-mode": "navigate",
+          "sec-fetch-site": "none",
+          "sec-fetch-user": "?1",
+          "upgrade-insecure-requests": "1",
+          "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/141.0.7390.37 Safari/537.36"
+        },
+        "body": null,
+        "resource_type": "document"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "text/html; charset=utf-8",
+          "X-Frame-Options": "SAMEORIGIN",
+          "Content-Encoding": "gzip",
+          "Connection": "close",
+          "Content-Length": "1042"
+        },
+        "body": "<!DOCTYPE html>\n<html>\n    <head>\n        <link href=/resources/labheader/css/academyLabHeader.css rel=stylesheet>\n        <link href=/resources/css/labs.css rel=stylesheet>\n        <title>Excessive trust in client-side controls</title>\n    </head>\n    <body>\n        <script src=\"/resources/labheader/js/labHeader.js\"></script>\n        <div id=\"academyLabHeader\">\n            <section class='academyLabBanner'>\n                <div class=container>\n                    <div class=logo></div>\n                        <div class=title-container>\n                            <h2>Excessive trust in client-side controls</h2>\n                            <a class=link-back href='https://portswigger.net/web-security/logic-flaws/examples/lab-logic-flaws-excessive-trust-in-client-side-controls'>\n                                Back&nbsp;to&nbsp;lab&nbsp;description&nbsp;\n                                <svg version=1.1 id=Layer_1 xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x=0px y=0px viewBox='0 0 28 30' enable-background='new 0 0 28 30' xml:space=preserve title=back-arrow>\n                                    <g>\n                                        <polygon points='1.4,0 0,1.2 12.6,15 0,28.8 1.4,30 15.1,15'></polygon>\n                                        <polygon points='14.3,0 12.9,1.2 25.6,15 12.9,28.8 14.3,30 28,15'></polygon>\n                                    </g>\n                                </svg>\n                            </a>\n                        </div>\n                        <div class='widgetcontainer-lab-status is-notsolved'>\n                            <span>LAB</span>\n                            <p>Not solved</p>\n                            <span class=lab-status-icon></span>\n                        </div>\n                    </div>\n                </div>\n            </section>\n        </div>\n        <div theme=\"\">\n            <section class=\"maincontainer\">\n                <div class=\"container is-page\">\n                    <header class=\"navigation-header\">\n                        <section class=\"top-links\">\n                            <a href=/>Home</a><p>|</p>\n                            <a href=\"/my-account\">My account</a><p>|</p>\n                            <a href=/cart>\n                                <img src=/resources/images/cart_blue.svg />\n                            </a>\n                            <p>1</p>\n                            <p>|</p>\n                        </section>\n                    </header>\n                    <header class=\"notification-header\">\n                    </header>\n                    <h1>Login</h1>\n                    <section>\n                        <form class=login-form method=POST action=\"/login\">\n                            <input required type=\"hidden\" name=\"csrf\" value=\"2wPuBQRXeYT3FWjKDAXo2x7AZXI4unXK\">\n                            <label>Username</label>\n                            <input required type=username name=\"username\" autofocus>\n                            <label>Password</label>\n                            <input required type=password name=\"password\">\n                            <button class=button type=submit> Log in </button>\n                        </form>\n                    </section>\n                </div>\n            </section>\n            <div class=\"footer-wrapper\">\n            </div>\n        </div>\n    </body>\n</html>\n",
+        "body_encoding": "text",
+        "error": null,
+        "final_url": "https://0a0f006104b8406980b7c1d400170053.web-security-academy.net/login"
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "url": "https://0a0f006104b8406980b7c1d400170053.web-security-academy.net/login",
+        "headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "priority": "u=0, i",
+          "sec-ch-ua": "\"HeadlessChrome\";v=\"141\", \"Not?A_Brand\";v=\"8\", \"Chromium\";v=\"141\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"Linux\"",
+          "sec-fetch-dest": "document",
+          "sec-fetch-mode": "navigate",
+          "sec-fetch-site": "none",
+          "sec-fetch-user": "?1",
+          "upgrade-insecure-requests": "1",
+          "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/141.0.7390.37 Safari/537.36"
+        },
+        "body": null,
+        "resource_type": "document"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "text/html; charset=utf-8",
+          "X-Frame-Options": "SAMEORIGIN",
+          "Content-Encoding": "gzip",
+          "Connection": "close",
+          "Content-Length": "1042"
+        },
+        "body": "<!DOCTYPE html>\n<html>\n    <head>\n        <link href=/resources/labheader/css/academyLabHeader.css rel=stylesheet>\n        <link href=/resources/css/labs.css rel=stylesheet>\n        <title>Excessive trust in client-side controls</title>\n    </head>\n    <body>\n        <script src=\"/resources/labheader/js/labHeader.js\"></script>\n        <div id=\"academyLabHeader\">\n            <section class='academyLabBanner'>\n                <div class=container>\n                    <div class=logo></div>\n                        <div class=title-container>\n                            <h2>Excessive trust in client-side controls</h2>\n                            <a class=link-back href='https://portswigger.net/web-security/logic-flaws/examples/lab-logic-flaws-excessive-trust-in-client-side-controls'>\n                                Back&nbsp;to&nbsp;lab&nbsp;description&nbsp;\n                                <svg version=1.1 id=Layer_1 xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x=0px y=0px viewBox='0 0 28 30' enable-background='new 0 0 28 30' xml:space=preserve title=back-arrow>\n                                    <g>\n                                        <polygon points='1.4,0 0,1.2 12.6,15 0,28.8 1.4,30 15.1,15'></polygon>\n                                        <polygon points='14.3,0 12.9,1.2 25.6,15 12.9,28.8 14.3,30 28,15'></polygon>\n                                    </g>\n                                </svg>\n                            </a>\n                        </div>\n                        <div class='widgetcontainer-lab-status is-notsolved'>\n                            <span>LAB</span>\n                            <p>Not solved</p>\n                            <span class=lab-status-icon></span>\n                        </div>\n                    </div>\n                </div>\n            </section>\n        </div>\n        <div theme=\"\">\n            <section class=\"maincontainer\">\n                <div class=\"container is-page\">\n                    <header class=\"navigation-header\">\n                        <section class=\"top-links\">\n                            <a href=/>Home</a><p>|</p>\n                            <a href=\"/my-account\">My account</a><p>|</p>\n                            <a href=/cart>\n                                <img src=/resources/images/cart_blue.svg />\n                            </a>\n                            <p>1</p>\n                            <p>|</p>\n                        </section>\n                    </header>\n                    <header class=\"notification-header\">\n                    </header>\n                    <h1>Login</h1>\n                    <section>\n                        <form class=login-form method=POST action=\"/login\">\n                            <input required type=\"hidden\" name=\"csrf\" value=\"2wPuBQRXeYT3FWjKDAXo2x7AZXI4unXK\">\n                            <label>Username</label>\n                            <input required type=username name=\"username\" autofocus>\n                            <label>Password</label>\n                            <input required type=password name=\"password\">\n                            <button class=button type=submit> Log in </button>\n                        </form>\n                    </section>\n                </div>\n            </section>\n            <div class=\"footer-wrapper\">\n            </div>\n        </div>\n    </body>\n</html>\n",
+        "body_encoding": "text",
+        "error": null,
+        "final_url": "https://0a0f006104b8406980b7c1d400170053.web-security-academy.net/login"
+      }
+    },
+    {
+      "request": {
+        "method": "POST",
+        "url": "https://0a0f006104b8406980b7c1d400170053.web-security-academy.net/login",
+        "headers": {
+          "Content-Type": "application/x-www-form-urlencoded"
+        },
+        "body": "csrf=2wPuBQRXeYT3FWjKDAXo2x7AZXI4unXK&username=test&password=Password123%21",
+        "resource_type": "form"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "text/html; charset=utf-8",
+          "X-Frame-Options": "SAMEORIGIN",
+          "Content-Encoding": "gzip",
+          "Connection": "close",
+          "Content-Length": "1067"
+        },
+        "body": "<!DOCTYPE html>\n<html>\n    <head>\n        <link href=/resources/labheader/css/academyLabHeader.css rel=stylesheet>\n        <link href=/resources/css/labs.css rel=stylesheet>\n        <title>Excessive trust in client-side controls</title>\n    </head>\n    <body>\n        <script src=\"/resources/labheader/js/labHeader.js\"></script>\n        <div id=\"academyLabHeader\">\n            <section class='academyLabBanner'>\n                <div class=container>\n                    <div class=logo></div>\n                        <div class=title-container>\n                            <h2>Excessive trust in client-side controls</h2>\n                            <a class=link-back href='https://portswigger.net/web-security/logic-flaws/examples/lab-logic-flaws-excessive-trust-in-client-side-controls'>\n                                Back&nbsp;to&nbsp;lab&nbsp;description&nbsp;\n                                <svg version=1.1 id=Layer_1 xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x=0px y=0px viewBox='0 0 28 30' enable-background='new 0 0 28 30' xml:space=preserve title=back-arrow>\n                                    <g>\n                                        <polygon points='1.4,0 0,1.2 12.6,15 0,28.8 1.4,30 15.1,15'></polygon>\n                                        <polygon points='14.3,0 12.9,1.2 25.6,15 12.9,28.8 14.3,30 28,15'></polygon>\n                                    </g>\n                                </svg>\n                            </a>\n                        </div>\n                        <div class='widgetcontainer-lab-status is-notsolved'>\n                            <span>LAB</span>\n                            <p>Not solved</p>\n                            <span class=lab-status-icon></span>\n                        </div>\n                    </div>\n                </div>\n            </section>\n        </div>\n        <div theme=\"\">\n            <section class=\"maincontainer\">\n                <div class=\"container is-page\">\n                    <header class=\"navigation-header\">\n                        <section class=\"top-links\">\n                            <a href=/>Home</a><p>|</p>\n                            <a href=\"/my-account\">My account</a><p>|</p>\n                            <a href=/cart>\n                                <img src=/resources/images/cart_blue.svg />\n                            </a>\n                            <p>1</p>\n                            <p>|</p>\n                        </section>\n                    </header>\n                    <header class=\"notification-header\">\n                    </header>\n                    <h1>Login</h1>\n                    <section>\n                        <p class=is-warning>Invalid username or password.</p>\n                        <form class=login-form method=POST action=\"/login\">\n                            <input required type=\"hidden\" name=\"csrf\" value=\"2wPuBQRXeYT3FWjKDAXo2x7AZXI4unXK\">\n                            <label>Username</label>\n                            <input required type=username name=\"username\" autofocus>\n                            <label>Password</label>\n                            <input required type=password name=\"password\">\n                            <button class=button type=submit> Log in </button>\n                        </form>\n                    </section>\n                </div>\n            </section>\n            <div class=\"footer-wrapper\">\n            </div>\n        </div>\n    </body>\n</html>\n",
+        "body_encoding": "text",
+        "error": null,
+        "final_url": "https://0a0f006104b8406980b7c1d400170053.web-security-academy.net/login"
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "url": "https://0a0f006104b8406980b7c1d400170053.web-security-academy.net/cart",
+        "headers": {
+          "accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7",
+          "priority": "u=0, i",
+          "sec-ch-ua": "\"HeadlessChrome\";v=\"141\", \"Not?A_Brand\";v=\"8\", \"Chromium\";v=\"141\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"Linux\"",
+          "sec-fetch-dest": "document",
+          "sec-fetch-mode": "navigate",
+          "sec-fetch-site": "none",
+          "sec-fetch-user": "?1",
+          "upgrade-insecure-requests": "1",
+          "user-agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/141.0.7390.37 Safari/537.36"
+        },
+        "body": null,
+        "resource_type": "document"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "text/html; charset=utf-8",
+          "X-Frame-Options": "SAMEORIGIN",
+          "Content-Encoding": "gzip",
+          "Connection": "close",
+          "Content-Length": "1343"
+        },
+        "body": "<!DOCTYPE html>\n<html>\n    <head>\n        <link href=/resources/labheader/css/academyLabHeader.css rel=stylesheet>\n        <link href=/resources/css/labs.css rel=stylesheet>\n        <title>Excessive trust in client-side controls</title>\n    </head>\n    <body>\n        <script src=\"/resources/labheader/js/labHeader.js\"></script>\n        <div id=\"academyLabHeader\">\n            <section class='academyLabBanner'>\n                <div class=container>\n                    <div class=logo></div>\n                        <div class=title-container>\n                            <h2>Excessive trust in client-side controls</h2>\n                            <a class=link-back href='https://portswigger.net/web-security/logic-flaws/examples/lab-logic-flaws-excessive-trust-in-client-side-controls'>\n                                Back&nbsp;to&nbsp;lab&nbsp;description&nbsp;\n                                <svg version=1.1 id=Layer_1 xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x=0px y=0px viewBox='0 0 28 30' enable-background='new 0 0 28 30' xml:space=preserve title=back-arrow>\n                                    <g>\n                                        <polygon points='1.4,0 0,1.2 12.6,15 0,28.8 1.4,30 15.1,15'></polygon>\n                                        <polygon points='14.3,0 12.9,1.2 25.6,15 12.9,28.8 14.3,30 28,15'></polygon>\n                                    </g>\n                                </svg>\n                            </a>\n                        </div>\n                        <div class='widgetcontainer-lab-status is-notsolved'>\n                            <span>LAB</span>\n                            <p>Not solved</p>\n                            <span class=lab-status-icon></span>\n                        </div>\n                    </div>\n                </div>\n            </section>\n        </div>\n        <div theme=\"\">\n            <section class=\"maincontainer\">\n                <div class=\"container is-page\">\n                    <header class=\"navigation-header\">\n                        <section class=\"top-links\">\n                            <a href=/>Home</a><p>|</p>\n                            <a href=\"/my-account\">My account</a><p>|</p>\n                            <a href=/cart>\n                                <img src=/resources/images/cart_blue.svg />\n                            </a>\n                            <p>1</p>\n                            <p>|</p>\n                        </section>\n                    </header>\n                    <header class=\"notification-header\">\n                    </header>\n                    <p><strong>Cart</strong></p>\n                    <table id='cart-items'>\n                        <tbody>\n                            <tr>\n                                <th>Name</th>\n                                <th>Price</th>\n                                <th>Quantity</th>\n                                <th></th>\n                            </tr>\n                            <tr>\n                                <td>\n                                    <a href=/product?productId=9>Paint a rainbow</a>\n                                </td>\n                                <td>$1.72</td>\n                                <td>\n                                    <form action=/cart method=POST style='display: inline'>\n                                        <input required type=hidden name=productId value=9>\n                                        <input required type=hidden name=quantity value=-1>\n                                        <input required type=hidden name=redir value=CART>\n                                        <button type=submit class=button style='min-width: auto'>-</button>\n                                    </form>\n                                    1\n                                    <form action=/cart method=POST style='display: inline'>\n                                        <input required type=hidden name=productId value=9>\n                                        <input required type=hidden name=quantity value=1>\n                                        <input required type=hidden name=redir value=CART>\n                                        <button type=submit class=button style='min-width: auto'>+</button>\n                                    </form>\n                                </td>\n                                <td>\n                                    <form action=/cart method=POST style='display: inline'>\n                                        <input required type=hidden name=productId value=9>\n                                        <input required type=hidden name=quantity value=-1>\n                                        <input required type=hidden name=redir value=CART>\n                                        <button type=submit class=button style='min-width: auto'>Remove</button>\n                                    </form>\n                                </td>\n                            </tr>\n                        </tbody>\n                    </table>\n                    <form class=login-form id=coupon-form action=/cart/coupon method=POST >\n                        <label>Coupon:</label>\n                        <input required type=\"hidden\" name=\"csrf\" value=\"2wPuBQRXeYT3FWjKDAXo2x7AZXI4unXK\">\n                        <input required placeholder=\"Add coupon\" type=text name=coupon>\n                        <button class=button type=submit>Apply</button>\n                    </form>\n                    <table>\n                        <tbody>\n                            <tr>\n                                <th>Total:</th>\n                                <th>$1.72</th>\n                            </tr>\n                        </tbody>\n                    </table>\n                    <form class=login-form action=/cart/checkout method=POST>\n                        <input required type=\"hidden\" name=\"csrf\" value=\"2wPuBQRXeYT3FWjKDAXo2x7AZXI4unXK\">\n                        <button class=button type=submit>Place order</button>\n                    </form>\n                </div>\n            </section>\n            <div class=\"footer-wrapper\">\n            </div>\n        </div>\n    </body>\n</html>\n",
+        "body_encoding": "text",
+        "error": null,
+        "final_url": "https://0a0f006104b8406980b7c1d400170053.web-security-academy.net/cart"
+      }
+    },
+    {
+      "request": {
+        "method": "POST",
+        "url": "https://0a0f006104b8406980b7c1d400170053.web-security-academy.net/cart/coupon",
+        "headers": {
+          "Content-Type": "application/x-www-form-urlencoded"
+        },
+        "body": "csrf=2wPuBQRXeYT3FWjKDAXo2x7AZXI4unXK&coupon=test",
+        "resource_type": "form"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "text/html; charset=utf-8",
+          "X-Frame-Options": "SAMEORIGIN",
+          "Content-Encoding": "gzip",
+          "Connection": "close",
+          "Content-Length": "1366"
+        },
+        "body": "<!DOCTYPE html>\n<html>\n    <head>\n        <link href=/resources/labheader/css/academyLabHeader.css rel=stylesheet>\n        <link href=/resources/css/labs.css rel=stylesheet>\n        <title>Excessive trust in client-side controls</title>\n    </head>\n    <body>\n        <script src=\"/resources/labheader/js/labHeader.js\"></script>\n        <div id=\"academyLabHeader\">\n            <section class='academyLabBanner'>\n                <div class=container>\n                    <div class=logo></div>\n                        <div class=title-container>\n                            <h2>Excessive trust in client-side controls</h2>\n                            <a class=link-back href='https://portswigger.net/web-security/logic-flaws/examples/lab-logic-flaws-excessive-trust-in-client-side-controls'>\n                                Back&nbsp;to&nbsp;lab&nbsp;description&nbsp;\n                                <svg version=1.1 id=Layer_1 xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x=0px y=0px viewBox='0 0 28 30' enable-background='new 0 0 28 30' xml:space=preserve title=back-arrow>\n                                    <g>\n                                        <polygon points='1.4,0 0,1.2 12.6,15 0,28.8 1.4,30 15.1,15'></polygon>\n                                        <polygon points='14.3,0 12.9,1.2 25.6,15 12.9,28.8 14.3,30 28,15'></polygon>\n                                    </g>\n                                </svg>\n                            </a>\n                        </div>\n                        <div class='widgetcontainer-lab-status is-notsolved'>\n                            <span>LAB</span>\n                            <p>Not solved</p>\n                            <span class=lab-status-icon></span>\n                        </div>\n                    </div>\n                </div>\n            </section>\n        </div>\n        <div theme=\"\">\n            <section class=\"maincontainer\">\n                <div class=\"container is-page\">\n                    <header class=\"navigation-header\">\n                        <section class=\"top-links\">\n                            <a href=/>Home</a><p>|</p>\n                            <a href=\"/my-account\">My account</a><p>|</p>\n                            <a href=/cart>\n                                <img src=/resources/images/cart_blue.svg />\n                            </a>\n                            <p>1</p>\n                            <p>|</p>\n                        </section>\n                    </header>\n                    <header class=\"notification-header\">\n                    </header>\n                    <p><strong>Cart</strong></p>\n                    <table id='cart-items'>\n                        <tbody>\n                            <tr>\n                                <th>Name</th>\n                                <th>Price</th>\n                                <th>Quantity</th>\n                                <th></th>\n                            </tr>\n                            <tr>\n                                <td>\n                                    <a href=/product?productId=9>Paint a rainbow</a>\n                                </td>\n                                <td>$1.72</td>\n                                <td>\n                                    <form action=/cart method=POST style='display: inline'>\n                                        <input required type=hidden name=productId value=9>\n                                        <input required type=hidden name=quantity value=-1>\n                                        <input required type=hidden name=redir value=CART>\n                                        <button type=submit class=button style='min-width: auto'>-</button>\n                                    </form>\n                                    1\n                                    <form action=/cart method=POST style='display: inline'>\n                                        <input required type=hidden name=productId value=9>\n                                        <input required type=hidden name=quantity value=1>\n                                        <input required type=hidden name=redir value=CART>\n                                        <button type=submit class=button style='min-width: auto'>+</button>\n                                    </form>\n                                </td>\n                                <td>\n                                    <form action=/cart method=POST style='display: inline'>\n                                        <input required type=hidden name=productId value=9>\n                                        <input required type=hidden name=quantity value=-1>\n                                        <input required type=hidden name=redir value=CART>\n                                        <button type=submit class=button style='min-width: auto'>Remove</button>\n                                    </form>\n                                </td>\n                            </tr>\n                        </tbody>\n                    </table>\n                    <form class=login-form id=coupon-form action=/cart/coupon method=POST >\n                        <label>Coupon:</label>\n                        <input required type=\"hidden\" name=\"csrf\" value=\"2wPuBQRXeYT3FWjKDAXo2x7AZXI4unXK\">\n                        <input required placeholder=\"Add coupon\" type=text name=coupon>\n                        <button class=button type=submit>Apply</button>\n                        <p class=is-warning>Invalid coupon</p>\n                    </form>\n                    <table>\n                        <tbody>\n                            <tr>\n                                <th>Total:</th>\n                                <th>$1.72</th>\n                            </tr>\n                        </tbody>\n                    </table>\n                    <form class=login-form action=/cart/checkout method=POST>\n                        <input required type=\"hidden\" name=\"csrf\" value=\"2wPuBQRXeYT3FWjKDAXo2x7AZXI4unXK\">\n                        <button class=button type=submit>Place order</button>\n                    </form>\n                </div>\n            </section>\n            <div class=\"footer-wrapper\">\n            </div>\n        </div>\n    </body>\n</html>\n",
+        "body_encoding": "text",
+        "error": null,
+        "final_url": "https://0a0f006104b8406980b7c1d400170053.web-security-academy.net/cart?couponError=INVALID_COUPON&coupon=test"
+      }
+    },
+    {
+      "request": {
+        "method": "POST",
+        "url": "https://0a0f006104b8406980b7c1d400170053.web-security-academy.net/cart/checkout",
+        "headers": {
+          "Content-Type": "application/x-www-form-urlencoded"
+        },
+        "body": "csrf=2wPuBQRXeYT3FWjKDAXo2x7AZXI4unXK",
+        "resource_type": "form"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+          "Content-Type": "text/html; charset=utf-8",
+          "X-Frame-Options": "SAMEORIGIN",
+          "Content-Encoding": "gzip",
+          "Connection": "close",
+          "Content-Length": "1369"
+        },
+        "body": "<!DOCTYPE html>\n<html>\n    <head>\n        <link href=/resources/labheader/css/academyLabHeader.css rel=stylesheet>\n        <link href=/resources/css/labs.css rel=stylesheet>\n        <title>Excessive trust in client-side controls</title>\n    </head>\n    <body>\n        <script src=\"/resources/labheader/js/labHeader.js\"></script>\n        <div id=\"academyLabHeader\">\n            <section class='academyLabBanner'>\n                <div class=container>\n                    <div class=logo></div>\n                        <div class=title-container>\n                            <h2>Excessive trust in client-side controls</h2>\n                            <a class=link-back href='https://portswigger.net/web-security/logic-flaws/examples/lab-logic-flaws-excessive-trust-in-client-side-controls'>\n                                Back&nbsp;to&nbsp;lab&nbsp;description&nbsp;\n                                <svg version=1.1 id=Layer_1 xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x=0px y=0px viewBox='0 0 28 30' enable-background='new 0 0 28 30' xml:space=preserve title=back-arrow>\n                                    <g>\n                                        <polygon points='1.4,0 0,1.2 12.6,15 0,28.8 1.4,30 15.1,15'></polygon>\n                                        <polygon points='14.3,0 12.9,1.2 25.6,15 12.9,28.8 14.3,30 28,15'></polygon>\n                                    </g>\n                                </svg>\n                            </a>\n                        </div>\n                        <div class='widgetcontainer-lab-status is-notsolved'>\n                            <span>LAB</span>\n                            <p>Not solved</p>\n                            <span class=lab-status-icon></span>\n                        </div>\n                    </div>\n                </div>\n            </section>\n        </div>\n        <div theme=\"\">\n            <section class=\"maincontainer\">\n                <div class=\"container is-page\">\n                    <header class=\"navigation-header\">\n                        <section class=\"top-links\">\n                            <a href=/>Home</a><p>|</p>\n                            <a href=\"/my-account\">My account</a><p>|</p>\n                            <a href=/cart>\n                                <img src=/resources/images/cart_blue.svg />\n                            </a>\n                            <p>1</p>\n                            <p>|</p>\n                        </section>\n                    </header>\n                    <header class=\"notification-header\">\n                    </header>\n                    <p><strong>Cart</strong></p>\n                    <p class=is-warning>Please login to continue</p>\n                    <table id='cart-items'>\n                        <tbody>\n                            <tr>\n                                <th>Name</th>\n                                <th>Price</th>\n                                <th>Quantity</th>\n                                <th></th>\n                            </tr>\n                            <tr>\n                                <td>\n                                    <a href=/product?productId=9>Paint a rainbow</a>\n                                </td>\n                                <td>$1.72</td>\n                                <td>\n                                    <form action=/cart method=POST style='display: inline'>\n                                        <input required type=hidden name=productId value=9>\n                                        <input required type=hidden name=quantity value=-1>\n                                        <input required type=hidden name=redir value=CART>\n                                        <button type=submit class=button style='min-width: auto'>-</button>\n                                    </form>\n                                    1\n                                    <form action=/cart method=POST style='display: inline'>\n                                        <input required type=hidden name=productId value=9>\n                                        <input required type=hidden name=quantity value=1>\n                                        <input required type=hidden name=redir value=CART>\n                                        <button type=submit class=button style='min-width: auto'>+</button>\n                                    </form>\n                                </td>\n                                <td>\n                                    <form action=/cart method=POST style='display: inline'>\n                                        <input required type=hidden name=productId value=9>\n                                        <input required type=hidden name=quantity value=-1>\n                                        <input required type=hidden name=redir value=CART>\n                                        <button type=submit class=button style='min-width: auto'>Remove</button>\n                                    </form>\n                                </td>\n                            </tr>\n                        </tbody>\n                    </table>\n                    <form class=login-form id=coupon-form action=/cart/coupon method=POST >\n                        <label>Coupon:</label>\n                        <input required type=\"hidden\" name=\"csrf\" value=\"2wPuBQRXeYT3FWjKDAXo2x7AZXI4unXK\">\n                        <input required placeholder=\"Add coupon\" type=text name=coupon>\n                        <button class=button type=submit>Apply</button>\n                    </form>\n                    <table>\n                        <tbody>\n                            <tr>\n                                <th>Total:</th>\n                                <th>$1.72</th>\n                            </tr>\n                        </tbody>\n                    </table>\n                    <form class=login-form action=/cart/checkout method=POST>\n                        <input required type=\"hidden\" name=\"csrf\" value=\"2wPuBQRXeYT3FWjKDAXo2x7AZXI4unXK\">\n                        <button class=button type=submit>Place order</button>\n                    </form>\n                </div>\n            </section>\n            <div class=\"footer-wrapper\">\n            </div>\n        </div>\n    </body>\n</html>\n",
+        "body_encoding": "text",
+        "error": null,
+        "final_url": "https://0a0f006104b8406980b7c1d400170053.web-security-academy.net/cart?err=NOT_LOGGED_IN"
+      }
+    },
+    {
+      "request": {
+        "method": "GET",
+        "url": "https://0a0f006104b8406980b7c1d400170053.web-security-academy.net/academyLabHeader",
+        "headers": {},
+        "body": null,
+        "resource_type": "discovered"
+      },
+      "response": {
+        "status": 404,
+        "headers": {
+          "Content-Type": "application/json; charset=utf-8",
+          "X-Frame-Options": "SAMEORIGIN",
+          "Content-Encoding": "gzip",
+          "Connection": "close",
+          "Content-Length": "31"
+        },
+        "body": "\"Not Found\"",
+        "body_encoding": "text",
+        "error": null,
+        "final_url": "https://0a0f006104b8406980b7c1d400170053.web-security-academy.net/academyLabHeader"
+      }
+    }
+  ],
+  "cookies": [
+    {
+      "name": "session",
+      "value": "qteEDbGNr1wndzqVes7Xq2iAdrThgy7s",
+      "domain": "0a0f006104b8406980b7c1d400170053.web-security-academy.net",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    }
+  ]
+}

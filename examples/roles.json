@@ -1,0 +1,43 @@
+# Example: roles.json
+# Configuration file for multi-user role testing
+
+{
+  "roles": [
+    {
+      "name": "Admin",
+      "username": "admin@example.com",
+      "password": "Admin@123!",
+      "cookies": [],
+      "expected_access": [
+        "/admin",
+        "/dashboard",
+        "/users",
+        "/settings",
+        "/reports"
+      ]
+    },
+    {
+      "name": "Regular User",
+      "username": "user@example.com",
+      "password": "User@123!",
+      "cookies": [],
+      "expected_access": [
+        "/profile",
+        "/orders",
+        "/cart",
+        "/wishlist"
+      ]
+    },
+    {
+      "name": "Guest",
+      "username": "guest@example.com",
+      "password": "Guest@123!",
+      "cookies": [],
+      "expected_access": [
+        "/products",
+        "/search",
+        "/about"
+      ]
+    }
+  ]
+}
